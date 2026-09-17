@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://fantastechenergy.com/</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image><image:loc>https://fantastechenergy.com/img/hero-lavere.jpg</image:loc><image:title>Ground-mount solar array on a northern Indiana farm</image:title></image:image>
+    <image:image><image:loc>https://fantastechenergy.com/img/work-lv-batteries.jpg</image:loc><image:title>640 kWh Koor battery bank</image:title></image:image>
+    <image:image><image:loc>https://fantastechenergy.com/img/work-farm.jpg</image:loc><image:title>Roof-mounted solar on two barns</image:title></image:image>
+  </url>
+</urlset>

@@ -262,7 +262,12 @@ header{
   border-bottom:1px solid var(--line);
 }
 .bar{display:flex;align-items:center;gap:20px;padding-block:10px}
-.bar>img{height:36px;width:auto}
+.bar>img{height:40px;width:auto}
+.lg-dark{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .lg-light{display:none}:root:not([data-theme="light"]) .lg-dark{display:block}}
+:root[data-theme="dark"] .lg-light{display:none}
+:root[data-theme="dark"] .lg-dark{display:block}
+
 nav{display:flex;gap:26px;margin-left:auto}
 nav a{
   font-weight:700;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;
@@ -478,7 +483,7 @@ button:hover{background:var(--red-deep)}
 footer.site{background:#080A0D;color:#867F77;padding-block:44px 34px;font-size:.92rem}
 footer.site .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
 @media (max-width:760px){footer.site .cols{grid-template-columns:1fr}}
-footer.site img{height:32px;width:auto;margin-bottom:16px}
+footer.site img{height:46px;width:auto;margin-bottom:18px}
 footer.site h4{
   font-weight:700;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;
   color:#C6BFB6;margin:0 0 12px;
@@ -495,7 +500,8 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
 <div class="topline"></div>
 <header>
   <div class="wrap bar">
-    <img src="img/logo.png" alt="Fantastech Energy">
+    <img class="lg-light" src="img/logo.png" alt="Fantastech Energy">
+    <img class="lg-dark" src="img/logo-white.png" alt="Fantastech Energy">
     <nav>
       <a href="#work">What We Do</a>
       <a href="#lines">Products</a>
@@ -672,7 +678,7 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
 
     <div class="job">
       <div class="jobhead">
-        <h3>200 kW three-phase off-grid &mdash; a family farm in northern Indiana</h3>
+        <h3>Stump farm &mdash; 200 kW three-phase off-grid, northern Indiana</h3>
         <p>The whole farm runs off the grid on an ATESS three-phase system with a 640 kWh Koor battery bank and a ground-mount array along the barn. Barn 1 has been carrying the load; the crew is adding barn 2 now.</p>
       </div>
       <div class="shots">
@@ -684,7 +690,7 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
 
     <div class="job">
       <div class="jobhead">
-        <h3>60 kW &mdash; Nelson Stump, northern Indiana</h3>
+        <h3>Stump farm &mdash; 60 kW, northern Indiana</h3>
         <p>Three paralleled Sol-Ark hybrids, a bank of storage cabinets on a poured pad, and roof arrays running the length of two barns. Set by our crew in June 2026.</p>
       </div>
       <div class="shots">
@@ -838,7 +844,7 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
   <div class="wrap">
     <div class="cols">
       <div>
-        <img src="img/logo.png" alt="Fantastech Energy">
+        <img src="img/logo-white.png" alt="Fantastech Energy">
         <p>Solar, battery backup and off-grid power out of Goshen, Indiana. Built and installed by the people who sell it.</p>
       </div>
       <div>

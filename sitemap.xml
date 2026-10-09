@@ -9,4 +9,10 @@
     <image:image><image:loc>https://fantastechenergy.com/img/work-lv-batteries.jpg</image:loc><image:title>640 kWh Koor battery bank</image:title></image:image>
     <image:image><image:loc>https://fantastechenergy.com/img/work-farm.jpg</image:loc><image:title>Roof-mounted solar on two barns</image:title></image:image>
   </url>
+  <url>
+    <loc>https://fantastechenergy.com/privacy.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
 </urlset>

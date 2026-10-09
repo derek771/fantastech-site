@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://fantastechenergy.com/">
 <meta property="og:title" content="Fantastech Energy — Solar &amp; Off-Grid Power, Goshen IN">
 <meta property="og:description" content="Solar, battery backup and full off-grid systems for homes, farms and shops in northern Indiana. Sized to your real loads, installed with the owner on the job.">
-<meta property="og:image" content="https://fantastechenergy.com/img/hero-farm.jpg">
+<meta property="og:image" content="https://fantastechenergy.com/img/og-barns.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -36,7 +36,7 @@
  "url": "https://fantastechenergy.com/",
  "logo": "https://fantastechenergy.com/img/logo.png",
  "image": [
-  "https://fantastechenergy.com/img/hero-farm.jpg",
+  "https://fantastechenergy.com/img/hero-barns.jpg",
   "https://fantastechenergy.com/img/work-batteries.jpg"
  ],
  "telephone": "+1-574-218-1973",
@@ -284,22 +284,25 @@ nav a:hover{color:var(--ink);border-bottom-color:var(--red)}
 @media (max-width:900px){nav{display:none}}
 
 /* ---------- hero ---------- */
-.hero{display:grid;grid-template-columns:1fr 1.22fr;background:var(--steel)}
-.hero .pane{padding:clamp(40px,5.2vw,78px) clamp(24px,3.4vw,58px);display:flex;flex-direction:column;justify-content:center}
-.hero .shotwrap{position:relative;min-height:440px;background:var(--steel-2)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr);background:var(--steel)}
+.hero .shotwrap{position:relative;aspect-ratio:2153/794;background:var(--steel-2);order:-1}
 .hero .shotwrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
 .hero .shotwrap::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,var(--steel) 0%,rgba(19,23,29,.35) 22%,rgba(19,23,29,0) 55%);
+  background:linear-gradient(0deg,var(--steel) 0%,rgba(19,23,29,0) 18%);
+}
+.hero .pane{
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:end;min-width:0;
+  padding:clamp(18px,2.4vw,34px) clamp(24px,3.4vw,58px) clamp(40px,4.6vw,66px);
 }
 .hero .kick{
   font-family:Archivo,sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--amber);margin-bottom:20px;
+  text-transform:uppercase;color:var(--amber);margin-bottom:16px;
 }
 .hero h1{color:#FCFAF7}
 .hero h1 span{display:block;color:var(--red)}
-.hero .sub{color:#CFC9C1;font-size:1.1rem;margin-top:22px;max-width:44ch}
-.ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+.hero .sub{color:#CFC9C1;font-size:1.1rem;margin-top:0;max-width:48ch}
+.ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
 .btn{
   font-family:Archivo,sans-serif;font-weight:800;font-size:.9rem;letter-spacing:.05em;
   text-transform:uppercase;padding:14px 24px;text-decoration:none;display:inline-block;
@@ -310,9 +313,9 @@ nav a:hover{color:var(--ink);border-bottom-color:var(--red)}
 .btn-o{border-color:rgba(237,232,224,.38);color:#EDE8E0}
 .btn-o:hover{border-color:#EDE8E0;background:rgba(255,255,255,.08)}
 @media (max-width:880px){
-  .hero{grid-template-columns:1fr}
-  .hero .shotwrap{min-height:290px;order:-1}
-  .hero .shotwrap::after{background:linear-gradient(0deg,var(--steel) 0%,rgba(19,23,29,0) 60%)}
+  .hero .pane{grid-template-columns:minmax(0,1fr);align-items:start}
+  .hero .pane>div{min-width:0}
+  .hero .sub{margin-top:18px;max-width:none}
 }
 
 /* ---------- spec bar ---------- */
@@ -518,16 +521,20 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
 
 <section class="hero">
   <div class="pane">
-    <div class="kick">Goshen, Indiana &nbsp;·&nbsp; Est. 2021</div>
-    <h1>Power that<br>keeps running<span>when the grid doesn't.</span></h1>
-    <p class="sub">Solar, battery backup and full off&#8209;grid systems for homes, farms and shops in northern Indiana — sized to your real loads, built from equipment we stock, installed with the owner on the job.</p>
-    <div class="ctas">
-      <a class="btn btn-p" href="#contact">Get a quote</a>
-      <a class="btn btn-o" href="tel:5742181973">Call 574-218-1973</a>
+    <div>
+      <div class="kick">Goshen, Indiana &nbsp;·&nbsp; Est. 2021</div>
+      <h1>Power that<br>keeps running<span>when the grid doesn't.</span></h1>
+    </div>
+    <div>
+      <p class="sub">Solar, battery backup and full off&#8209;grid systems for homes, farms and shops in northern Indiana — sized to your real loads, built from equipment we stock, installed with the owner on the job.</p>
+      <div class="ctas">
+        <a class="btn btn-p" href="#contact">Get a quote</a>
+        <a class="btn btn-o" href="tel:5742181973">Call 574-218-1973</a>
+      </div>
     </div>
   </div>
   <div class="shotwrap">
-    <img src="img/hero-farm.jpg" alt="Roof-mounted Fantastech solar arrays running the length of two barns on a northern Indiana farm">
+    <img src="img/hero-barns.jpg" alt="Aerial view of three long barns on a northern Indiana farm, two with Fantastech roof-mounted solar arrays">
   </div>
 </section>
 

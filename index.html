@@ -776,7 +776,7 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
   <div class="wrap">
     <div class="tag">Get in touch</div>
     <h2>Tell us what you<br>need to run.</h2>
-    <p class="lede">A phone call is usually fastest. If you'd rather write it out, fill this in and it opens an email to Derek with your answers already in it.</p>
+    <p class="lede">A phone call is usually fastest. If you'd rather write it out, fill this in and it goes straight to Derek.</p>
 
     <div class="cgrid">
       <div class="dl">
@@ -829,8 +829,9 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
           </select>
         </div>
         <div><label for="fmsg">What needs to run?</label><textarea id="fmsg" name="fmsg" placeholder="House and shop, 5 HP well pump, two barn fans, want to stay off the generator…"></textarea></div>
-        <button type="submit">Send it to Derek</button>
-        <p class="note" id="formnote">This opens your email program with the message filled in. Nothing is stored on this page.</p>
+        <input type="text" id="fhoney" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <button type="submit" id="fsend">Send it to Derek</button>
+        <p class="note" id="formnote" role="status" aria-live="polite">Goes straight to Derek's email. We only use it to answer you. <a href="privacy.html" style="color:inherit">Privacy Policy</a></p>
       </form>
     </div>
   </div>
@@ -871,9 +872,18 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
 (function(){
   var f=document.getElementById('quoteForm');
   if(!f)return;
+  // Sends to a Google Apps Script web app in Derek's own Google account
+  // ("Fantastech Website Form"), which emails derek@ and logs a row in the
+  // "Website Leads - fantastechenergy.com form" sheet.
+  var ENDPOINT='https://script.google.com/macros/s/AKfycbxLVlaM6R7HuclKkUZ1tjvmrRXligf4z-lVbFwE9uaJ9RODpIL-PedeFB00w2rXvpPXgQ/exec';
+  var note=document.getElementById('formnote');
+  var btn=document.getElementById('fsend');
+  var busy=false;
   f.addEventListener('submit',function(e){
     e.preventDefault();
+    if(busy)return;
     var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
+    if(g('fhoney')){note.textContent='Thanks. Derek will get back to you.';f.reset();return;}
     var subject='Website quote request - '+(g('fname')||'new lead');
     var lines=[
       'Name:    '+g('fname'),
@@ -885,10 +895,39 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
       'What needs to run:',
       g('fmsg')
     ];
-    window.location.href='mailto:derek@fantastech.org?subject='+
-      encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
-    document.getElementById('formnote').textContent=
-      'Opening your email program. If nothing happened, just call 574-218-1973.';
+    // Fallback: open the visitor's own email program, the way this form used to work.
+    var openMail=function(){
+      window.location.href='mailto:derek@fantastech.org?subject='+
+        encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
+      note.textContent='That did not go through, so we opened your email program instead. If nothing happened, just call or text 574-218-1973.';
+    };
+    var data={
+      name:g('fname'),
+      phone:g('fphone'),
+      email:g('femail'),
+      area:g('ftown'),
+      kind:g('fkind'),
+      message:g('fmsg')
+    };
+    busy=true;btn.disabled=true;btn.textContent='Sending…';
+    note.textContent='Sending…';
+    // Plain-text body keeps this a simple request (no CORS preflight).
+    fetch(ENDPOINT,{method:'POST',body:JSON.stringify(data)})
+      .then(function(r){return r.json();})
+      .then(function(res){
+        if(res&&res.ok){
+          f.reset();
+          btn.textContent='Sent';
+          note.textContent='Got it. Derek will get back to you soon. Need it faster? Call or text 574-218-1973.';
+        }else{
+          busy=false;btn.disabled=false;btn.textContent='Send it to Derek';
+          openMail();
+        }
+      })
+      .catch(function(){
+        busy=false;btn.disabled=false;btn.textContent='Send it to Derek';
+        openMail();
+      });
   });
 })();
 </script>

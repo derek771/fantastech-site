@@ -895,11 +895,24 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
       'What needs to run:',
       g('fmsg')
     ];
-    // Fallback: open the visitor's own email program, the way this form used to work.
-    var openMail=function(){
-      window.location.href='mailto:derek@fantastech.org?subject='+
-        encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
-      note.textContent='That did not go through, so we opened your email program instead. If nothing happened, just call or text 574-218-1973.';
+    var mailHref='mailto:derek@fantastech.org?subject='+
+      encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
+    var link=function(href,text){var a=document.createElement('a');a.href=href;a.textContent=text;a.style.color='inherit';return a;};
+    // If the send can't be confirmed, say so and give the visitor a call, text or email link.
+    // We don't open their email program on our own - the message may already have gone through.
+    var fail=function(){
+      busy=false;btn.disabled=false;btn.textContent='Send it to Derek';
+      note.textContent='';
+      note.appendChild(document.createTextNode('We could not confirm that went through. Please call or text '));
+      note.appendChild(link('tel:5742181973','574-218-1973'));
+      note.appendChild(document.createTextNode(', or '));
+      note.appendChild(link(mailHref,'email it to Derek'));
+      note.appendChild(document.createTextNode('.'));
+    };
+    var ok=function(){
+      f.reset();
+      btn.textContent='Sent';
+      note.textContent='Got it. Derek will get back to you soon. Need it faster? Call or text 574-218-1973.';
     };
     var data={
       name:g('fname'),
@@ -911,23 +924,13 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
     };
     busy=true;btn.disabled=true;btn.textContent='Sending…';
     note.textContent='Sending…';
-    // Plain-text body keeps this a simple request (no CORS preflight).
-    fetch(ENDPOINT,{method:'POST',body:JSON.stringify(data)})
-      .then(function(r){return r.json();})
-      .then(function(res){
-        if(res&&res.ok){
-          f.reset();
-          btn.textContent='Sent';
-          note.textContent='Got it. Derek will get back to you soon. Need it faster? Call or text 574-218-1973.';
-        }else{
-          busy=false;btn.disabled=false;btn.textContent='Send it to Derek';
-          openMail();
-        }
-      })
-      .catch(function(){
-        busy=false;btn.disabled=false;btn.textContent='Send it to Derek';
-        openMail();
-      });
+    var settled=false;
+    var timer=setTimeout(function(){if(settled)return;settled=true;fail();},30000);
+    // no-cors: the browser sends it and we only learn that Google answered.
+    // Plain-text body keeps it a simple request.
+    fetch(ENDPOINT,{method:'POST',mode:'no-cors',body:JSON.stringify(data)})
+      .then(function(){if(settled)return;settled=true;clearTimeout(timer);ok();})
+      .catch(function(){if(settled)return;settled=true;clearTimeout(timer);fail();});
   });
 })();
 </script>

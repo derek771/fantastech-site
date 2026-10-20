@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Fantastech Energy | Solar, Battery Backup &amp; Off-Grid Power — Goshen, Indiana</title>
-<meta name="description" content="Fantastech Energy Solution LLC designs and installs solar, battery backup and off-grid power systems for homes, farms and shops in northern Indiana. Owner on every job. Goshen, IN — 574-218-1973.">
+<meta name="description" content="Solar panels, inverters, lithium batteries, solar freezers and well pumps, sized and installed for homes, farms and shops in northern Indiana. Owner on every job. Goshen, IN — 574-218-1973.">
 <link rel="canonical" href="https://fantastechenergy.com/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#D2103E">
@@ -116,12 +116,33 @@
   "poultry barn solar",
   "solar well pumps",
   "solar refrigerators",
+  "solar chest freezers",
+  "DC refrigerators",
+  "bifacial solar panels",
+  "solar charge controllers",
   "ground mount solar racking",
+  "PV wire and battery cable",
   "Sol-Ark",
   "Koor",
   "Pytes",
-  "EG4"
+  "EG4",
+  "Victron",
+  "Sunstar",
+  "Grundfos",
+  "Trina Solar"
  ],
+ "hasOfferCatalog": {
+  "@type": "OfferCatalog",
+  "name": "Solar equipment",
+  "itemListElement": [
+   {"@type": "OfferCatalog", "name": "Solar inverters, charge controllers and battery chargers", "url": "https://fantastechenergy.com/solar-inverters.html"},
+   {"@type": "OfferCatalog", "name": "Lithium solar batteries", "url": "https://fantastechenergy.com/solar-batteries.html"},
+   {"@type": "OfferCatalog", "name": "Solar panels", "url": "https://fantastechenergy.com/solar-panels.html"},
+   {"@type": "OfferCatalog", "name": "Solar chest freezers and refrigerators", "url": "https://fantastechenergy.com/solar-freezers-refrigerators.html"},
+   {"@type": "OfferCatalog", "name": "Solar well pumps", "url": "https://fantastechenergy.com/solar-well-pumps.html"},
+   {"@type": "OfferCatalog", "name": "Solar racking, PV wire and battery cable", "url": "https://fantastechenergy.com/racking-wire.html"}
+  ]
+ },
  "sameAs": [
   "https://www.facebook.com/FantastechEnergySolutionsLLC",
   "https://www.yelp.com/biz/fantastech-energy-solutions-goshen-2",
@@ -276,6 +297,8 @@ nav a{
   border-bottom:2px solid transparent;transition:color .15s,border-color .15s;
 }
 nav a:hover{color:var(--ink);border-bottom-color:var(--red)}
+nav a{white-space:nowrap}
+@media (max-width:1180px){nav{gap:15px}nav a{font-size:.68rem;letter-spacing:.08em}}
 .tel{
   font-weight:800;font-size:.85rem;letter-spacing:.04em;background:var(--red);color:#fff;
   text-decoration:none;padding:10px 15px;white-space:nowrap;
@@ -366,6 +389,14 @@ nav a:hover{color:var(--ink);border-bottom-color:var(--red)}
   text-transform:uppercase;color:var(--amber);margin-top:16px;
   padding-top:14px;border-top:1px solid rgba(255,255,255,.09);
 }
+.line .more{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px}
+.line .more a{
+  font-family:Archivo,sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.1em;
+  text-transform:uppercase;color:#FCFAF7;text-decoration:none;border-bottom:2px solid var(--red);padding-bottom:2px;
+}
+.line .more a:hover{color:var(--amber);border-bottom-color:var(--amber)}
+.shoprow{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;margin-top:34px}
+.shoprow p{color:var(--on-steel-2);font-size:.98rem;max-width:56ch}
 
 /* ---------- recent work ---------- */
 .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
@@ -485,8 +516,9 @@ button:hover{background:var(--red-deep)}
 
 /* ---------- footer ---------- */
 footer.site{background:#080A0D;color:#867F77;padding-block:44px 34px;font-size:.92rem}
-footer.site .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
-@media (max-width:760px){footer.site .cols{grid-template-columns:1fr}}
+footer.site .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:34px}
+@media (max-width:860px){footer.site .cols{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){footer.site .cols{grid-template-columns:1fr}}
 footer.site img{height:46px;width:auto;margin-bottom:18px}
 footer.site h4{
   font-weight:700;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;
@@ -513,6 +545,7 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
       <a href="#work-shown">Our Work</a>
       <a href="#koor">Koor</a>
       <a href="#dealers">Dealers</a>
+      <a href="https://solartimetracker.com/solar-products/">Shop</a>
       <a href="#contact">Contact</a>
     </nav>
     <a class="tel" href="tel:5742181973">574&#8209;218&#8209;1973</a>
@@ -594,8 +627,9 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
         <div class="plate"><img src="img/sol-ark-18k.jpg" alt="Sol-Ark 18K hybrid inverter"></div>
         <div class="txt">
           <h3>Hybrid &amp; off-grid inverters</h3>
-          <p>Split-phase hybrids from 8 kW to 18 kW — single units, or paralleled for big loads and three-phase.</p>
-          <div class="brands">Sol-Ark · Koor · EG4</div>
+          <p>Split-phase hybrids from 8 kW to 18 kW — single units, or paralleled for big loads and three-phase. Plus charge controllers and battery chargers.</p>
+          <div class="brands">Sol-Ark · Koor · EG4 · Victron</div>
+          <div class="more"><a href="solar-inverters.html">See inverters</a></div>
         </div>
       </div>
       <div class="line">
@@ -604,6 +638,7 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
           <h3>LiFePO4 batteries</h3>
           <p>Rack and wall-mount lithium, from a small backup bank up to whole-farm storage, with the comms cables and rack hardware to match.</p>
           <div class="brands">Pytes · Koor · EG4</div>
+          <div class="more"><a href="solar-batteries.html">See batteries</a></div>
         </div>
       </div>
       <div class="line">
@@ -612,6 +647,7 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
           <h3>Solar panels</h3>
           <p>620&nbsp;W bifacial modules by the pallet, Grade&nbsp;A and value grade, priced so a big array still pencils out.</p>
           <div class="brands">Trina · Boviet · Waaree</div>
+          <div class="more"><a href="solar-panels.html">See solar panels</a></div>
         </div>
       </div>
       <div class="line">
@@ -620,6 +656,7 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
           <h3>Racking &amp; mounting</h3>
           <p>Pole-pounded ground mounts and roof rail — plus our own welded angle brackets, made right here in the shop.</p>
           <div class="brands">Sinclair · K2 · Fantastech</div>
+          <div class="more"><a href="racking-wire.html">See racking</a></div>
         </div>
       </div>
       <div class="line">
@@ -628,6 +665,7 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
           <h3>Solar appliances</h3>
           <p>DC refrigerators, chest freezers and solar well pumps for the places the utility never reached.</p>
           <div class="brands">SunStar · Grundfos</div>
+          <div class="more"><a href="solar-freezers-refrigerators.html">Freezers &amp; fridges</a><a href="solar-well-pumps.html">Well pumps</a></div>
         </div>
       </div>
       <div class="line">
@@ -636,8 +674,13 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
           <h3>Balance of system</h3>
           <p>PV wire by the foot or the spool, combiners, breakers, surge protection, disconnects, cable glands and comms cables.</p>
           <div class="brands">MidNite · Carlon · Fantastech</div>
+          <div class="more"><a href="racking-wire.html">See wire &amp; parts</a></div>
         </div>
       </div>
+    </div>
+    <div class="shoprow">
+      <a class="btn btn-p" href="https://solartimetracker.com/solar-products/">Shop online</a>
+      <p>Prices and stock for everything above are in our online store. Pick up in Goshen or have it shipped.</p>
     </div>
   </div>
 </section>
@@ -845,10 +888,21 @@ footer.site .legal{margin-top:34px;padding-top:20px;border-top:1px solid #1C2026
         <p>Solar, battery backup and off-grid power out of Goshen, Indiana. Built and installed by the people who sell it.</p>
       </div>
       <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="solar-inverters.html">Inverters</a></li>
+          <li><a href="solar-batteries.html">Batteries</a></li>
+          <li><a href="solar-panels.html">Solar panels</a></li>
+          <li><a href="solar-freezers-refrigerators.html">Freezers &amp; fridges</a></li>
+          <li><a href="solar-well-pumps.html">Well pumps</a></li>
+          <li><a href="racking-wire.html">Racking &amp; wire</a></li>
+          <li><a href="https://solartimetracker.com/solar-products/">Shop online</a></li>
+        </ul>
+      </div>
+      <div>
         <h4>Company</h4>
         <ul>
           <li><a href="#work">What we do</a></li>
-          <li><a href="#lines">Product lines</a></li>
           <li><a href="#how">How a job goes</a></li>
           <li><a href="#dealers">Dealer program</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>

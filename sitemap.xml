@@ -2,12 +2,53 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://fantastechenergy.com/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image><image:loc>https://fantastechenergy.com/img/hero-barns.jpg</image:loc><image:title>Aerial view of roof-mounted solar on three barns, northern Indiana</image:title></image:image>
     <image:image><image:loc>https://fantastechenergy.com/img/work-batteries.jpg</image:loc><image:title>Storage cabinets on a poured pad</image:title></image:image>
     <image:image><image:loc>https://fantastechenergy.com/img/work-farm.jpg</image:loc><image:title>Roof-mounted solar on two barns</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://fantastechenergy.com/solar-inverters.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://fantastechenergy.com/img/sol-ark-18k.jpg</image:loc><image:title>Sol-Ark 18K hybrid inverter</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://fantastechenergy.com/solar-batteries.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://fantastechenergy.com/img/pytes-v16.jpg</image:loc><image:title>Pytes V16 wall-mount lithium battery</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://fantastechenergy.com/solar-panels.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://fantastechenergy.com/img/trina-620w-panel.jpg</image:loc><image:title>Trina 620 watt bifacial solar panel</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://fantastechenergy.com/solar-freezers-refrigerators.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://fantastechenergy.com/img/sunstar-fridge.jpg</image:loc><image:title>Sunstar solar refrigerator</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://fantastechenergy.com/solar-well-pumps.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fantastechenergy.com/racking-wire.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image><image:loc>https://fantastechenergy.com/img/sinclair-c-channel.jpg</image:loc><image:title>Ground mount solar array on Sinclair racking</image:title></image:image>
   </url>
   <url>
     <loc>https://fantastechenergy.com/privacy.html</loc>

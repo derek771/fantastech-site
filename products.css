@@ -128,7 +128,10 @@ nav a{white-space:nowrap}
 @media (max-width:940px){.models{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:600px){.models{grid-template-columns:1fr}}
 .model{background:var(--surface);border:1px solid var(--line);padding:22px 22px 20px;display:flex;flex-direction:column;position:relative}
-.model::before{content:"";position:absolute;top:0;left:0;width:30px;height:3px;background:var(--red)}
+.model::before{content:"";position:absolute;top:0;left:0;width:30px;height:3px;background:var(--red);z-index:1}
+.model .shot{background:#fff;height:160px;display:flex;align-items:center;justify-content:center;
+  margin:-22px -22px 16px;padding:12px;border-bottom:1px solid var(--line)}
+.model .shot img{max-height:136px;width:auto;height:auto;object-fit:contain}
 .model h3{padding-top:4px}
 .model p{font-size:.93rem;color:var(--ink-2);margin-top:8px;flex:1}
 .model .go{
